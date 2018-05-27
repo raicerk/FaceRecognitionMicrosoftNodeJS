@@ -1,0 +1,31 @@
+{
+  "name": "facerecognitionmicrosoftnodejs",
+  "version": "1.0.0",
+  "description": "API para reconocimiento facial",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raicerk/facerecognitionmicrosoftnodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "facerecognition",
+    "api",
+    "expressjs",
+    "ia"
+  ],
+  "author": "Juan Mora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raicerk/facerecognitionmicrosoftnodejs/issues"
+  },
+  "homepage": "https://github.com/raicerk/facerecognitionmicrosoftnodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  }
+}
