@@ -30,7 +30,7 @@ router.post('/reconoce', function(req, res) {
     url: 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
     body: toStream(Buffer.from(req.body.imagen, 'base64'))
   }, function(error, response, body) {
-    res.status(200).send(JSON.parse(response.body))
+    res.status(response.statusCode).send(JSON.parse(response.body))
   });
 })
 
