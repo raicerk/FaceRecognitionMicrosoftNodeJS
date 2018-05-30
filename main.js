@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
-var fs = require('fs');
+const toStream = require('buffer-to-stream');
 var config = require('./config')
 
 var app = express();
@@ -16,19 +16,19 @@ app.use(bodyParser.urlencoded({
 
 router.get('/', function(req, res) {
   res.status(200).send({
-    mensaje: "mi app con reconocimiento facial"
+    mensaje: "mi API de reconocimiento facial"
   });
 });
 
-router.post('/imagen', function(req, res) {
+router.post('/reconoce', function(req, res) {
 
-  request.post({
+  request.post({s
     headers: {
-      'Content-Type': 'application/octet-stream',
+      'Content-Type': 'application/octet-stream',sssss
       'Ocp-Apim-Subscription-Key': config.tokenAPIMicrosoftCognitive
     },
     url: 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
-    body: fs.createReadStream('imagen.jpg')
+    body: toStream(Buffer.from(req.body.imagen, 'base64'))
   }, function(error, response, body) {
     res.status(200).send(JSON.parse(response.body))
   });

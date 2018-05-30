@@ -1,4 +1,4 @@
 module.exports = {
-  tokenAPIMicrosoftCognitive: '',
+  tokenAPIMicrosoftCognitive: 'aquivaeltokendemicrosoftrecognition',
   puerto: 3000
 };
