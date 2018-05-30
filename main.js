@@ -22,9 +22,9 @@ router.get('/', function(req, res) {
 
 router.post('/reconoce', function(req, res) {
 
-  request.post({s
+  request.post({
     headers: {
-      'Content-Type': 'application/octet-stream',sssss
+      'Content-Type': 'application/octet-stream',
       'Ocp-Apim-Subscription-Key': config.tokenAPIMicrosoftCognitive
     },
     url: 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
